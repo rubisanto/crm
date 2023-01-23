@@ -16,7 +16,10 @@
     </div>
   </aside>
   <div class="page">
-    <div class="contents">Ici contenu dynamique</div>
+    <div class="contents">
+      <!-- projeter le router outlet -->
+      <ng-content select=".tr-router"></ng-content>
+    </div>
     <footer>
       <ng-content select=".tr-footer"></ng-content>
     </footer>

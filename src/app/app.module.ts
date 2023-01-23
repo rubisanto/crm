@@ -14,7 +14,8 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    CoreModule
+    CoreModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

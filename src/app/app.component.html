@@ -1,3 +1,11 @@
-test depuis app.component
+<app-ui>
+  <!-- projeter le bouton depuis le composant  -->
+  <app-icon-close class="tr-btn-close"></app-icon-close>
+  <app-icon-nav class="tr-btn-nav"></app-icon-nav>
 
-<app-ui></app-ui>
+  <!-- projeter les composants à l'intérieur de app ui -->
+  <!-- nom: transclusion -->
+  <app-header class="tr-header"></app-header>
+  <app-nav class="tr-nav"></app-nav>
+  <app-footer class="tr-footer"></app-footer>
+</app-ui>

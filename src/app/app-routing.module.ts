@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   // définir les routes ici
@@ -19,11 +19,15 @@ const routes: Routes = [
 {path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule)
 },
 // pour le module clients
-{path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule)}
+{path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule)},
+// pour le module page-not-found
+{path: '**', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    {preloadingStrategy: PreloadAllModules}
+    )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

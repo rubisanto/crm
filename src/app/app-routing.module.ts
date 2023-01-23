@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, Router, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   // définir les routes ici
@@ -20,14 +20,22 @@ const routes: Routes = [
 },
 // pour le module clients
 {path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule)},
-// pour le module page-not-found
+// pour le module page-not-found, wildcard toujours en dernier
 {path: '**', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,
+    // avec preloadingStrategy: PreloadAllModules, on précharge tous les modules
     {preloadingStrategy: PreloadAllModules}
     )],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  // console log des routes
+  constructor(private router : Router) {
+    this.router.config.forEach(route => {
+      console.log(route.path);
+    });
+  }
+ }

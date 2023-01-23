@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IconsModule } from '../icons/icons.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,7 +17,8 @@ import { IconsModule } from '../icons/icons.module';
   ],
   // utiliser pour les composants
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     UiModule,

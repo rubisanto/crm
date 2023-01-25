@@ -35,7 +35,7 @@ export class AppRoutingModule {
   // console log des routes
   constructor(private router : Router) {
     this.router.config.forEach(route => {
-      console.log(route.path);
+
     });
   }
  }

@@ -18,7 +18,7 @@ export class UiComponent implements OnInit {
   public toggle() {
     // faire alterner la valeur de open
     this.open = !this.open;
-    console.log(this.open);
+
 
   }
 }

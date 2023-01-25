@@ -6,6 +6,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IconsModule } from '../icons/icons.module';
 import { RouterModule } from '@angular/router';
+import { TemplatesModule } from '../templates/templates.module';
+
 
 
 
@@ -25,7 +27,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    IconsModule
+    IconsModule,
+
   ]
 })
 export class CoreModule { }

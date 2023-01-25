@@ -8,16 +8,19 @@ import { OrdersService } from '../../services/orders.service';
   styleUrls: ['./page-list-orders.component.scss']
 })
 export class PageListOrdersComponent implements OnInit {
+
+  public titleParent: string = "Liste des commandes";
+
   // prop pour stocker data
   public collection!: Order[]
 
   constructor(private ordersService : OrdersService) {
     // déclencher la prop collection du service + afficher data dans console
     this.ordersService.collection.subscribe((data) => {
-      console.log(data);
+
       this.collection = data;
-      console.log(this.collection);
-      
+
+
     }
     );
   }

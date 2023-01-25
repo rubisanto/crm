@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-template-container',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template-container.component.scss']
 })
 export class TemplateContainerComponent implements OnInit {
+  // créer prop alimenté par le parent @Input()
+  @Input() title !:string ;
 
   constructor() { }
 

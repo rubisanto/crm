@@ -1,4 +1,11 @@
 <!-- itérer dans collection et affiche chaque obj de collection -->
-<ul>
+<!-- <ul>
   <li *ngFor="let i of collection">{{ i.client }}</li>
-</ul>
+</ul> -->
+
+<!-- utiliser les templates de pages -->
+<app-template-full-width [title]="titleParent">
+  <app-table-light></app-table-light>
+</app-template-full-width>
+<!-- ici property binding -->
+<!-- <app-template-container [title]="titleParent"></app-template-container> -->

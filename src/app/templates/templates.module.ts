@@ -12,6 +12,10 @@ import { TemplateContainerComponent } from './components/template-container/temp
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    TemplateFullWidthComponent,
+    TemplateContainerComponent
   ]
 })
 export class TemplatesModule { }

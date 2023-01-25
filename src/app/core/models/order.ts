@@ -24,4 +24,6 @@ export class Order implements OrderI {
 
 }
 
+}
+
 // new Order() => créer un nouvel objet Order

@@ -14,6 +14,18 @@ export class PageListOrdersComponent implements OnInit {
   // prop pour stocker data
   public collection!: Order[]
 
+  // en tete du tableau
+  public headers : string[] = [
+    'Action',
+    'Type',
+    'Client',
+    'NbJours',
+    'Tjm HT',
+    'Total HT',
+    'Total TTC',
+    'State',
+  ];
+
   constructor(private ordersService : OrdersService) {
     // déclencher la prop collection du service + afficher data dans console
     this.ordersService.collection.subscribe((data) => {

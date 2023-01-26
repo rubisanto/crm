@@ -2,19 +2,14 @@
   <!-- thead utile pour le référencement -->
   <thead>
     <!-- table row (ligne) -->
+
     <tr>
-      <!--   table header cells (th) -->
-      <th scope="col">#</th>
-      <th scope="col">titre 2</th>
+      <!-- il y a autant de th que de d'éléments dans headers -->
+      <!-- table header (th) -->
+      <th scope="col" *ngFor="let header of headers">{{ header }}</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <!--  table data cells (td)-->
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
+    <ng-content></ng-content>
   </tbody>
 </table>

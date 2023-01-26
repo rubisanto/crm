@@ -4,6 +4,7 @@ import { TableLightComponent } from './components/table-light/table-light.compon
 import { BtnComponent } from './components/btn/btn.component';
 import { RouterModule } from '@angular/router';
 import { TotalPipe } from './pipes/total.pipe';
+import { TvaPipe} from './pipes/tva.pipe';
 
 
 
@@ -12,7 +13,8 @@ import { TotalPipe } from './pipes/total.pipe';
   declarations: [
     TableLightComponent,
     BtnComponent,
-    TotalPipe
+    TotalPipe,
+    TvaPipe
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { TotalPipe } from './pipes/total.pipe';
   exports: [
     TableLightComponent,
     BtnComponent,
-    TotalPipe
+    TotalPipe,
+    TvaPipe
   ]
 })
 export class SharedModule { }

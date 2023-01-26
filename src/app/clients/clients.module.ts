@@ -5,6 +5,8 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { PageListClientsComponent } from './pages/page-list-clients/page-list-clients.component';
 import { PageAddClientComponent } from './pages/page-add-client/page-add-client.component';
 import { PageEditClientComponent } from './pages/page-edit-client/page-edit-client.component';
+import { TemplatesModule } from '../templates/templates.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { PageEditClientComponent } from './pages/page-edit-client/page-edit-clie
   ],
   imports: [
     CommonModule,
-    ClientsRoutingModule
+    ClientsRoutingModule,
+    TemplatesModule,
+    SharedModule
   ]
 })
 export class ClientsModule { }

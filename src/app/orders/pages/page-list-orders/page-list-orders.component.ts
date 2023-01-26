@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -8,6 +9,9 @@ import { OrdersService } from '../../services/orders.service';
   styleUrls: ['./page-list-orders.component.scss']
 })
 export class PageListOrdersComponent implements OnInit {
+
+  // déclarer une propriété et stocker l'enum et le mettre en tableau
+  public states = Object.values(StateOrder);
 
   public titleParent: string = "Liste des commandes";
 
@@ -26,6 +30,8 @@ export class PageListOrdersComponent implements OnInit {
     'State',
   ];
 
+
+
   constructor(private ordersService : OrdersService) {
     // déclencher la prop collection du service + afficher data dans console
     this.ordersService.collection.subscribe((data) => {
@@ -39,5 +45,7 @@ export class PageListOrdersComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
 
 }

@@ -16,11 +16,27 @@
       <td>{{ item.client }}</td>
       <td>{{ item.nbJours }}</td>
       <td>{{ item.tjmHt }}</td>
-      <td>Total HT</td>
-      <td>Total TTC</td>
-      <td>{{ item.state }}</td>
+      <!-- hors taxes -->
+      <!-- ne pas lancer de fonctions en html -->
+      <td>{{ item.tjmHt | total : item.nbJours }}</td>
+      <!-- ttc -->
+      <td>{{ item.tjmHt | total : item.nbJours : item.tva }}</td>
+
+      <td>
+        <select>
+          <!-- pas de ngfor avec un enum -->
+          <option *ngFor="let state of states">{{ state }}</option>
+        </select>
+      </td>
     </tr>
   </app-table-light>
 </app-template-full-width>
+<!-- ajouter le component btn  -->
+<app-btn
+  label="Ajouter"
+  route="/orders/add"
+  styleBtn="btn btn-primary"
+></app-btn>
+
 <!-- ici property binding -->
 <!-- <app-template-container [title]="titleParent"></app-template-container> -->

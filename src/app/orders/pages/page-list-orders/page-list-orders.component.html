@@ -23,9 +23,15 @@
       <td>{{ item.tjmHt | total : item.nbJours : item.tva }}</td>
 
       <td>
-        <select>
+        <select (change)="changeState(item, $event)">
           <!-- pas de ngfor avec un enum -->
-          <option *ngFor="let state of states">{{ state }}</option>
+          <option
+            [selected]="state === item.state"
+            *ngFor="let state of states"
+            [value]="state"
+          >
+            {{ state }}
+          </option>
         </select>
       </td>
     </tr>

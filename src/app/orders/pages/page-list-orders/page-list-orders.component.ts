@@ -46,6 +46,25 @@ export class PageListOrdersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // méthode formulaire
+  public changeState( item: Order, event: Event) {
+    console.log(event)
+    // as pour typer la variable
+    const target = event.target as HTMLSelectElement;
+    const state = target.value as StateOrder;
+
+    // item.state = data
+
+    // envoyer un objet modifié
+    this.ordersService.changeState(item, state).subscribe((data) => {
+      console.log(data);
+
+    }
+    );
+
+
+  }
+
 
 
 }

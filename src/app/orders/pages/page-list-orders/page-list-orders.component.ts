@@ -57,7 +57,9 @@ export class PageListOrdersComponent implements OnInit {
 
     // envoyer un objet modifié
     this.ordersService.changeState(item, state).subscribe((data) => {
-      console.log(data);
+      // éviter les égalités
+      // éviter des objets = objets
+      Object.assign(item, data);
 
     }
     );

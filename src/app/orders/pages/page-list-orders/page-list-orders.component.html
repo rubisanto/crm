@@ -22,7 +22,8 @@
       <!-- ttc -->
       <td>{{ item.tjmHt | total : item.nbJours : item.tva }}</td>
 
-      <td>
+      <!-- mettre une directive -->
+      <td appState [etat]="item.state">
         <select (change)="changeState(item, $event)">
           <!-- pas de ngfor avec un enum -->
           <option

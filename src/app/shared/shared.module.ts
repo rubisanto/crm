@@ -5,6 +5,7 @@ import { BtnComponent } from './components/btn/btn.component';
 import { RouterModule } from '@angular/router';
 import { TotalPipe } from './pipes/total.pipe';
 import { TvaPipe} from './pipes/tva.pipe';
+import { StateDirective } from './directives/state.directive';
 
 
 
@@ -14,7 +15,8 @@ import { TvaPipe} from './pipes/tva.pipe';
     TableLightComponent,
     BtnComponent,
     TotalPipe,
-    TvaPipe
+    TvaPipe,
+    StateDirective
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { TvaPipe} from './pipes/tva.pipe';
     TableLightComponent,
     BtnComponent,
     TotalPipe,
-    TvaPipe
+    TvaPipe,
+    StateDirective
   ]
 })
 export class SharedModule { }

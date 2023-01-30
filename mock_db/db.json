@@ -70,7 +70,7 @@
     },
     {
       "tva": 20,
-      "state": "INACTIVE",
+      "state": "ACTIVE",
       "name": "modis",
       "totalCaHt": 0,
       "comment": "rsger",

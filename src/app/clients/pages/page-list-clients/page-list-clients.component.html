@@ -12,7 +12,17 @@
     <tr *ngFor="let item of collection">
       <!--  table data cells (td)-->
       <td>Action</td>
-      <td>{{ item.state }}</td>
+      <td appState [etat]="item.state">
+        <select (change)="changeState(item, $event)">
+          <option
+            [selected]="state === item.state"
+            *ngFor="let state of states"
+            [value]="state"
+          >
+            {{ state }}
+          </option>
+        </select>
+      </td>
       <td>{{ item.tva }}</td>
       <td>{{ item.id }}</td>
       <td>{{ item.name }}</td>
@@ -22,13 +32,6 @@
       <!-- ttc -->
       <td>{{ item.totalCaHt | tva : item.tva }}</td>
       <td>{{ item.comment }}</td>
-
-      <td>
-        <select>
-          <!-- pas de ngfor avec un enum -->
-          <option *ngFor="let state of states">{{ state }}</option>
-        </select>
-      </td>
     </tr>
   </app-table-light>
 </app-template-full-width>

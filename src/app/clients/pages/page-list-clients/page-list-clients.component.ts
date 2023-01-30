@@ -9,8 +9,9 @@ import { ClientsService } from 'src/app/orders/services/clients.service';
   styleUrls: ['./page-list-clients.component.scss']
 })
 export class PageListClientsComponent implements OnInit {
-
+  // déclarer une propriété et stocker l'enum et le mettre en tableau
   public states = Object.values(StateClient);
+
 
   public titleParent: string = "Liste des clients";
 
@@ -36,4 +37,23 @@ export class PageListClientsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // méthode formulaire
+  public changeState( item: Client, event: Event) {
+    console.log(event)
+    // as pour typer la variable
+    const target = event.target as HTMLSelectElement;
+    const state = target.value as StateClient;
+
+    // item.state = data
+
+    // envoyer un objet modifié
+    this.clientsService.changeState(item, state).subscribe((data) => {
+      // éviter les égalités
+      // éviter des objets = objets
+      Object.assign(item, data);
+
+    }
+    );
+
+  }
 }

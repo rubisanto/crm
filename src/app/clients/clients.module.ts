@@ -7,13 +7,15 @@ import { PageAddClientComponent } from './pages/page-add-client/page-add-client.
 import { PageEditClientComponent } from './pages/page-edit-client/page-edit-client.component';
 import { TemplatesModule } from '../templates/templates.module';
 import { SharedModule } from '../shared/shared.module';
+import { FormClientComponent } from './components/form-client/form-client.component';
 
 
 @NgModule({
   declarations: [
     PageListClientsComponent,
     PageAddClientComponent,
-    PageEditClientComponent
+    PageEditClientComponent,
+    FormClientComponent
   ],
   imports: [
     CommonModule,

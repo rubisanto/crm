@@ -1,0 +1,78 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="typePresta">Type</label>
+    <input
+      type="text"
+      class="form-control"
+      id="typePresta"
+      placeholder="Type de presta "
+      formControlName="typePresta"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="client">Client</label>
+    <input
+      type="text"
+      class="form-control"
+      id="client"
+      placeholder="Client "
+      formControlName="client"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="nbJours">Nombre de jours</label>
+    <input
+      type="number"
+      class="form-control"
+      id="nbJours"
+      formControlName="nbJours"
+    />
+  </div>
+
+  <!-- pour le tjm HT -->
+  <div class="form-group">
+    <label for="tjmHt">TJM HT</label>
+    <input
+      type="number"
+      class="form-control"
+      id="tjmHt"
+      formControlName="tjmHt"
+    />
+  </div>
+
+  <!-- pour le taux de TVA -->
+  <div class="form-group">
+    <label for="tva">Taux de TVA</label>
+    <input type="number" class="form-control" id="tva" formControlName="tva" />
+  </div>
+
+  <!-- pour le state -->
+  <div class="form-group">
+    <label for="states">Etat de la commande</label>
+    <select
+      name="state"
+      id="states"
+      formControlName="state"
+      class="form-control"
+    >
+      <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+  </div>
+
+  <!-- pour le comment -->
+  <div class="form-group">
+    <label for="comment">Commentaire</label>
+    <textarea
+      name="comment"
+      id="comment"
+      class="form-control"
+      formControlName="comment"
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<!-- id au formulaire -->

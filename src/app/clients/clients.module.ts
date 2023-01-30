@@ -8,6 +8,7 @@ import { PageEditClientComponent } from './pages/page-edit-client/page-edit-clie
 import { TemplatesModule } from '../templates/templates.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormClientComponent } from './components/form-client/form-client.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormClientComponent } from './components/form-client/form-client.compon
     CommonModule,
     ClientsRoutingModule,
     TemplatesModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class ClientsModule { }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StateClient } from 'src/app/core/enums/state-client';
 import { Client } from 'src/app/core/models/client';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,11 @@ import { Client } from 'src/app/core/models/client';
 export class ClientsService {
 
   private collection$!: Observable<Client[]>;
+
+  private url = environment.urlApi;
   constructor(private http: HttpClient) {
     // on déclenche le setter
-    this.collection = this.http.get<Client[]>('http://localhost:3000/clients');
+    this.collection = this.http.get<Client[]>(`${this.url}/clients`);
   }
 
   public get collection() :Observable<Client[]> {
@@ -35,6 +38,10 @@ export class ClientsService {
   }
 
   public update(obj: Client) : Observable<Client>{
-    return this.http.put<Client>(`http://localhost:3000/clients/${obj.id}`, obj);
+    return this.http.put<Client>(`${obj.id}/clients/${obj.id}`, obj);
+  }
+
+  public add(obj: Client) : Observable<Client>{
+    return this.http.post<Client>(`${this.url}/clients`, obj);
   }
 }

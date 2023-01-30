@@ -1,1 +1,60 @@
-<p>form-client works!</p>
+<!-- form for client  -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <!-- pour le state -->
+  <div class="form-group">
+    <label for="states">Etat de la commande</label>
+    <select
+      name="state"
+      id="state"
+      formControlName="state"
+      class="form-control"
+    >
+      <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+  </div>
+
+  <!-- pour le taux de TVA -->
+  <div class="form-group">
+    <label for="tva">Taux de TVA</label>
+    <input type="number" class="form-control" id="tva" formControlName="tva" />
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="name"
+      formControlName="name"
+    />
+  </div>
+
+  <!-- div pour totalCaHt -->
+  <div class="form-group">
+    <label for="totalCaHt">Total Ca Ht</label>
+    <input
+      type="number"
+      class="form-control"
+      id="totalCaHt"
+      formControlName="totalCaHt"
+    />
+  </div>
+
+  <!-- pour le comment -->
+  <div class="form-group">
+    <label for="comment">Commentaire</label>
+    <textarea
+      name="comment"
+      id="comment"
+      class="form-control"
+      formControlName="comment"
+    ></textarea>
+  </div>
+
+  <button [disabled]="!form.valid" type="submit" class="btn btn-primary">
+    Submit
+  </button>
+</form>
+
+<!-- id au formulaire -->

@@ -50,6 +50,9 @@ export class OrdersService {
 
 
   // add order
+  public add(obj : Order) : Observable<Order>{
+    return this.http.post<Order>(`${this.url}/orders`, obj)
+  }
 
   // modify order
 }

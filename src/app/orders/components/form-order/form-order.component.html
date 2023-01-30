@@ -5,7 +5,8 @@
       type="text"
       class="form-control"
       id="typePresta"
-      placeholder="Type de presta "
+      placeholder="Type de
+    presta "
       formControlName="typePresta"
     />
   </div>
@@ -72,7 +73,9 @@
     ></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button [disabled]="!form.valid" type="submit" class="btn btn-primary">
+    Submit
+  </button>
 </form>
 
 <!-- id au formulaire -->

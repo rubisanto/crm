@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StateClient } from 'src/app/core/enums/state-client';
 import { Client } from 'src/app/core/models/client';
 import { ClientsService } from 'src/app/orders/services/clients.service';
@@ -28,7 +29,7 @@ export class PageListClientsComponent implements OnInit {
     'comment',
   ];
 
-  constructor(private clientsService : ClientsService) {
+  constructor(private clientsService : ClientsService, private router : Router) {
     this.clientsService.collection.subscribe((data) => {
       this.collection = data;
     });
@@ -55,5 +56,9 @@ export class PageListClientsComponent implements OnInit {
     }
     );
 
+  }
+
+  public goToEdit(item: Client) {
+    this.router.navigate(['clients', 'edit', item.id]);
   }
 }

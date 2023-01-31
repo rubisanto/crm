@@ -9,6 +9,7 @@ import { TemplatesModule } from '../templates/templates.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormClientComponent } from './components/form-client/form-client.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IconsModule } from '../icons/icons.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClientsRoutingModule,
     TemplatesModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IconsModule
   ]
 })
 export class ClientsModule { }

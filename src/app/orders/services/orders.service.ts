@@ -55,4 +55,11 @@ export class OrdersService {
   }
 
   // modify order
+  // getitemById
+  public getItemById(id: number) : Observable<Order>{
+    return this.http.get<Order>(`${this.url}/orders/${id}`)
+  }
+
+
+
 }

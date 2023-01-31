@@ -31,8 +31,8 @@ export class FormOrderComponent implements OnInit {
       nbJours: [this.init.nbJours],
       tva: [this.init.tva],
       state: [this.init.state],
-      typePresta: [this.init.typePresta, [Validators.required], [Validators.minLength(2), Validators.maxLength(100)]],
-      client: [ this.init.client, [Validators.required], [Validators.minLength(2), Validators.maxLength(100)]],
+      typePresta: [this.init.typePresta],
+      client: [ this.init.client],
       comment: [this.init.comment],
       id: [this.init.id]
 

@@ -8,7 +8,8 @@ const routes: Routes = [
   // toutes les routes en lien avec orders
   {path: '', component: PageListOrdersComponent},
   {path: 'add', component: PageAddOrderComponent},
-  {path: 'edit', component: PageEditOrderComponent},
+  // pour que id soit dynamique
+  {path: 'edit/:id', component: PageEditOrderComponent},
 
 
 ];

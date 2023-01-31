@@ -9,6 +9,8 @@ import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.com
 import { TemplatesModule } from '../templates/templates.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormOrderComponent } from './components/form-order/form-order.component';
+import { IconEditComponent } from '../icons/components/icon-edit/icon-edit.component';
+import { IconsModule } from '../icons/icons.module';
 
 
 @NgModule({
@@ -16,14 +18,18 @@ import { FormOrderComponent } from './components/form-order/form-order.component
     PageListOrdersComponent,
     PageEditOrderComponent,
     PageAddOrderComponent,
-    FormOrderComponent
+    FormOrderComponent,
+
+
   ],
   imports: [
     CommonModule,
     OrdersRoutingModule,
     TemplatesModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IconsModule
+
   ]
 })
 export class OrdersModule { }

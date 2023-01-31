@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
@@ -32,7 +33,7 @@ export class PageListOrdersComponent implements OnInit {
 
 
 
-  constructor(private ordersService : OrdersService) {
+  constructor(private ordersService : OrdersService, private router : Router) {
     // déclencher la prop collection du service + afficher data dans console
     this.ordersService.collection.subscribe((data) => {
 
@@ -67,6 +68,11 @@ export class PageListOrdersComponent implements OnInit {
 
   }
 
+  public goToEdit( item: Order) {
+    // redirection
+    this.router.navigate(['orders', 'edit', item.id]);
+
+  }
 
 
 }

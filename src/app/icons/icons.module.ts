@@ -21,6 +21,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     IconNavComponent,
     IconEditComponent,
     IconCloseComponent,
+
   ],
 })
 export class IconsModule {}

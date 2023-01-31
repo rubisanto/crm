@@ -92,8 +92,8 @@
     },
     {
       "state": "ACTIVE",
-      "tva": 20,
       "id": 2,
+      "tva": 20,
       "name": "Modis",
       "totalCaHt": 120000,
       "comment": "un comment pour client modis"
@@ -112,7 +112,7 @@
       "tva": 20,
       "name": "test",
       "totalCaHt": 2500,
-      "comment": "test"
+      "comment": "test3"
     }
   ]
 }

@@ -24,8 +24,8 @@ export class FormClientComponent implements OnInit {
       // créer un objet
       state: [this.init.state],
       id: [this.init.id],
-      tva: [this.init.tva, [Validators.required], [Validators.minLength(2), Validators.maxLength(100)]],
-      name: [this.init.name, [Validators.required], [Validators.minLength(2), Validators.maxLength(100)]],
+      tva: [this.init.tva],
+      name: [this.init.name],
       totalCaHt: [this.init.totalCaHt],
       comment: [this.init.comment],
 

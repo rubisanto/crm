@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -30,6 +30,9 @@ import { IconsModule } from '../icons/icons.module';
     ReactiveFormsModule,
     IconsModule
 
+  ],
+  providers: [
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' }
   ]
 })
 export class OrdersModule { }

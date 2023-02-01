@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TotalPipe implements PipeTransform {
 
   // ne pas toucher à la signature de la méthode transform
-  transform(val: number, coef: number, tva?: number): unknown {
+  transform(val: number, coef: number, tva?: number): number {
     // méthode pour calculer le total HT
     if(tva){
       return val * coef * (1 + tva / 100);

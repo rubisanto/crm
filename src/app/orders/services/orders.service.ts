@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { environment } from 'src/environments/environment';
@@ -9,14 +9,26 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class OrdersService {
-
-  private collection$!: Observable<Order[]>;
+  // observable froid
+  // private collection$!: Observable<Order[]>;
+  // observable chaud
+  private collection$: BehaviorSubject<Order[]> = new BehaviorSubject<Order[]>([]);
 
   private url = environment.urlApi;
 
   constructor(private http: HttpClient) {
     // on déclenche le setter
-    this.collection = this.http.get<Order[]>(`${this.url}/orders`);
+    // this.collection = this.http.get<Order[]>(`${this.url}/orders`);
+    this.refreshCollection();
+  }
+  // méthode refreshCollection
+  public refreshCollection() {
+    this.http.get<Order[]>(`${this.url}/orders`).subscribe((data) => {
+      //  passer data à l'observable chaud
+      this.collection$.next(data);
+
+    }
+    );
   }
 
   public get collection() :Observable<Order[]> {
@@ -24,10 +36,11 @@ export class OrdersService {
     return this.collection$;
   }
 
-  public set collection(col: Observable<Order[]>) {
-    // attibue une valeur a une propriété privée
-    this.collection$ = col;
-  }
+  // public set collection(col: Observable<Order[]>) {
+  //   // attibue une valeur a une propriété privée
+  //   this.collection$ = col;
+  // }
+
 // modifier l'état de l'objet
   public changeState(item: Order, state: StateOrder) {
     // créer un nouvel object avec la nouvelle valeur de state
@@ -59,6 +72,21 @@ export class OrdersService {
   public getItemById(id: number) : Observable<Order>{
     return this.http.get<Order>(`${this.url}/orders/${id}`)
   }
+
+  // delete order
+  public delete(id: number) : Observable<Order>{
+    // enchainer avec pipe pour refresh collection
+    return this.http.delete<Order>(`${this.url}/orders/${id}`).pipe(
+      // refresh collection
+      // tap pour déclencher une fonction
+     tap(() => this.refreshCollection())
+    )
+
+  }
+
+
+
+  // appel http.subscribe
 
 
 

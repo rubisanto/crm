@@ -74,5 +74,12 @@ export class PageListOrdersComponent implements OnInit {
 
   }
 
+  public onDelete(id : number) {
+    this.ordersService.delete(id).subscribe((data) => {
+
+      console.log(data);
+    })
+  }
+
 
 }

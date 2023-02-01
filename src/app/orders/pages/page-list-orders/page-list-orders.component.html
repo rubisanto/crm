@@ -13,16 +13,17 @@
       <!--  table data cells (td)-->
       <td>
         <app-icon-edit (click)="goToEdit(item)"></app-icon-edit>
+        <app-icon-delete (click)="onDelete(item.id)"></app-icon-delete>
       </td>
       <td>{{ item.typePresta }}</td>
       <td>{{ item.client }}</td>
       <td>{{ item.nbJours }}</td>
-      <td>{{ item.tjmHt }}</td>
+      <td>{{ item.tjmHt | currency }}</td>
       <!-- hors taxes -->
       <!-- ne pas lancer de fonctions en html -->
-      <td>{{ item.tjmHt | total : item.nbJours }}</td>
+      <td>{{ item.tjmHt | total : item.nbJours | currency }}</td>
       <!-- ttc -->
-      <td>{{ item.tjmHt | total : item.nbJours : item.tva }}</td>
+      <td>{{ item.tjmHt | total : item.nbJours : item.tva | currency }}</td>
 
       <!-- mettre une directive -->
       <td appState [etat]="item.state">
